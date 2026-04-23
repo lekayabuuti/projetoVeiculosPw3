@@ -1,4 +1,22 @@
 package com.example.demo.model;
 
-public record Veiculo(String marca, String modelo, int ano) {
+import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Embeddable
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Veiculo{
+    private String marca;
+    private String modelo;
+    private int ano;
+
+    public Veiculo(DadosVeiculo dadosVeiculo){
+        this.marca = dadosVeiculo.marca();
+        this.modelo = dadosVeiculo.modelo();
+        this.ano = dadosVeiculo.ano();
+    }
 }
