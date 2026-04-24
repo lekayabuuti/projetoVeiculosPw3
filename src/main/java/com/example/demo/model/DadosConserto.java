@@ -10,11 +10,11 @@ import jakarta.validation.constraints.Pattern;
 public record DadosConserto(
         @NotBlank
         @Pattern(regexp = "\\d{2}/\\d{2}/\\d{4}")
-        String dataEntrada,
+        String data_entrada,
 
         @NotBlank
         @Pattern(regexp = "\\d{2}/\\d{2}/\\d{4}")
-        String dataSaida,
+        String data_saida,
 
         @Valid
         @NotNull
@@ -22,14 +22,10 @@ public record DadosConserto(
 
         @Valid
         @NotNull
-        DadosVeiculo veiculo,
-
-        @Valid
-        @NotNull
-        boolean ativo
+        DadosVeiculo veiculo
 ) {
     public DadosConserto(Conserto conserto) {
-        this( conserto.getDataEntrada(), conserto.getDataSaida(),
-                new DadosMecanico(conserto.getMecanico()), new DadosVeiculo(conserto.getVeiculo()), conserto.isAtivo());
+        this( conserto.getData_entrada(), conserto.getData_saida(),
+                new DadosMecanico(conserto.getMecanico()), new DadosVeiculo(conserto.getVeiculo()));
     }
 }

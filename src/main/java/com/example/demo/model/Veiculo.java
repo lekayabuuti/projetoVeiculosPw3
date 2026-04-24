@@ -21,4 +21,19 @@ public class Veiculo{
         this.ano = dadosVeiculo.ano();
         this.cor = dadosVeiculo.cor();
     }
+
+    public void atualizarInformacoes(DadosVeiculo veiculo) {
+        if (veiculo.marca() != null) {
+            this.marca = veiculo.marca();
+        }
+        if (veiculo.modelo() != null) {
+            this.modelo = veiculo.modelo();
+        }
+        if (veiculo.ano() != null) {
+            this.ano = veiculo.ano();
+        }
+        if (veiculo.cor() != null) {
+            this.cor = veiculo.cor();
+        }
+    }
 }

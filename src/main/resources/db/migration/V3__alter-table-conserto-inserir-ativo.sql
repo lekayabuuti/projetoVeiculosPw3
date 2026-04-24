@@ -1,1 +1,2 @@
-ALTER TABLE consertos ADD ativo int;
+ALTER TABLE consertos ADD ativo boolean;
+update consertos set ativo = true;

@@ -24,13 +24,11 @@ public record DadosConsertosParcial(
         String marca,
 
         @NotBlank
-        String modelo,
+        String modelo
 
-        @NotBlank
-        boolean ativo
 ) {
     public DadosConsertosParcial(Conserto conserto) {
-        this(conserto.getId(), conserto.getDataEntrada(), conserto.getDataSaida(),
-                conserto.getMecanico().getNome(), conserto.getVeiculo().getMarca(), conserto.getVeiculo().getModelo(), conserto.isAtivo());
+        this(conserto.getId(), conserto.getData_entrada(), conserto.getData_saida(),
+                conserto.getMecanico().getNome(), conserto.getVeiculo().getMarca(), conserto.getVeiculo().getModelo());
     }
 }

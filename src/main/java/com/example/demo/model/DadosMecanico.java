@@ -8,7 +8,7 @@ public record DadosMecanico(
         @NotBlank
         String nome,
 
-        int anos_experiencia
+        Integer anos_experiencia
 ) {
     public DadosMecanico(Mecanico mecanico) {
         this( mecanico.getNome(), mecanico.getAnos_experiencia());
