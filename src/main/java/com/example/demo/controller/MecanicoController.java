@@ -6,11 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("mecanicos")
+@RequestMapping("/mecanicos")
 public class MecanicoController {
 
-    @PostMapping
-    public void cadastrar(@RequestBody String json) {
-        System.out.println(json);
-    }
 }

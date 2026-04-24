@@ -7,6 +7,9 @@ import jakarta.validation.constraints.Pattern;
 @Embeddable
 public record DadosConsertosParcial(
         @NotBlank
+        Long id,
+
+        @NotBlank
         @Pattern(regexp = "\\d{2}/\\d{2}/\\d{4}")
         String dataEntrada,
 
@@ -21,10 +24,13 @@ public record DadosConsertosParcial(
         String marca,
 
         @NotBlank
-        String modelo
+        String modelo,
+
+        @NotBlank
+        boolean ativo
 ) {
     public DadosConsertosParcial(Conserto conserto) {
-        this( conserto.getDataEntrada(), conserto.getDataSaida(),
-                conserto.getMecanico().getNome(), conserto.getVeiculo().getMarca(), conserto.getVeiculo().getModelo());
+        this(conserto.getId(), conserto.getDataEntrada(), conserto.getDataSaida(),
+                conserto.getMecanico().getNome(), conserto.getVeiculo().getMarca(), conserto.getVeiculo().getModelo(), conserto.isAtivo());
     }
 }

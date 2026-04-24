@@ -13,23 +13,27 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("conserto")
+@RequestMapping("/conserto")
 public class ConsertoController {
     @Autowired
     private ConsertoRepository repository;
 
     @PostMapping
     public void cadastrar(@RequestBody @Valid DadosConserto conserto){
-        repository.save( new Conserto(conserto));
+        repository.save(new Conserto(conserto));
     }
 
     @GetMapping
     public Page<DadosConserto> listar(Pageable pageable) {
-        return repository.findAll(pageable).map(DadosConserto::new);
+        return repository.findAll(pageable)
+                .map(DadosConserto::new);
     }
 
-    @GetMapping
+    @GetMapping("/parcial")
     public List<DadosConsertosParcial> listarParcial() {
-        return repository.findAll().stream().map(DadosConsertosParcial::new).toList();
+        return repository.findAll()
+                .stream()
+                .map(DadosConsertosParcial::new).filter(DadosConsertosParcial::ativo)
+                .toList();
     }
 }

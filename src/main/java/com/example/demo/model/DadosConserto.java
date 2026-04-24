@@ -22,10 +22,14 @@ public record DadosConserto(
 
         @Valid
         @NotNull
-        DadosVeiculo veiculo
+        DadosVeiculo veiculo,
+
+        @Valid
+        @NotNull
+        boolean ativo
 ) {
     public DadosConserto(Conserto conserto) {
         this( conserto.getDataEntrada(), conserto.getDataSaida(),
-                new DadosMecanico(conserto.getMecanico()), new DadosVeiculo(conserto.getVeiculo()));
+                new DadosMecanico(conserto.getMecanico()), new DadosVeiculo(conserto.getVeiculo()), conserto.isAtivo());
     }
 }

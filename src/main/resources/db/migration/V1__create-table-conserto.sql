@@ -8,8 +8,7 @@ CREATE TABLE consertos (
      ano INT,
 
      nome VARCHAR(100),
-     especialidade VARCHAR(100),
-     experiencia INT,
+     anos_experiencia INT,
 
      PRIMARY KEY (id)
 );
