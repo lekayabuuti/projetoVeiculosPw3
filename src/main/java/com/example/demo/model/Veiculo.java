@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.model.dtos.DadosVeiculo;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

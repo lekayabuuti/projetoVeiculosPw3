@@ -2,10 +2,9 @@ package com.example.demo.controller;
 
 import com.example.demo.infrastructure.ConsertoRepository;
 import com.example.demo.model.*;
+import com.example.demo.model.dtos.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import org.apache.coyote.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

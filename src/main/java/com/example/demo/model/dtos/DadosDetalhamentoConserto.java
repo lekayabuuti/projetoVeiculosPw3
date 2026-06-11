@@ -1,4 +1,8 @@
-package com.example.demo.model;
+package com.example.demo.model.dtos;
+
+import com.example.demo.model.Conserto;
+import com.example.demo.model.Mecanico;
+import com.example.demo.model.Veiculo;
 
 public record DadosDetalhamentoConserto(
         Long id, String data_entrada, String data_saida, Mecanico mecanico, Veiculo veiculo, Boolean ativo) {

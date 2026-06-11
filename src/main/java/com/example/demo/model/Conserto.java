@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.example.demo.model.dtos.DadosAtualizacaoConserto;
+import com.example.demo.model.dtos.DadosConserto;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

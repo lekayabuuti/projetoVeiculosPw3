@@ -1,5 +1,6 @@
-package com.example.demo.model;
+package com.example.demo.model.dtos;
 
+import com.example.demo.model.Veiculo;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
