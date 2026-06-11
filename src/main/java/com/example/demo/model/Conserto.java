@@ -7,17 +7,24 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Table(name = "consertos")
 @Entity(name = "Conserto")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Conserto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @EqualsAndHashCode.Include
+    @Column(nullable = false, unique = true, updatable = false)
+    private final String uuid = UUID.randomUUID().toString();
+
     private String data_entrada;
     private String data_saida;
 

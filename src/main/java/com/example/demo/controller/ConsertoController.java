@@ -18,8 +18,14 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/conserto")
 public class ConsertoController {
-    @Autowired
-    private ConsertoRepository repository;
+//    @Autowired
+//    private ConsertoRepository repository;
+
+    private final ConsertoRepository repository;
+
+    public ConsertoController(ConsertoRepository repository) {
+        this.repository = repository;
+    }
 
     @PostMapping
     public ResponseEntity cadastrar(@RequestBody @Valid DadosConserto dados, UriComponentsBuilder uriBuilder){
