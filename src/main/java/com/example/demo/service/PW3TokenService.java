@@ -22,12 +22,11 @@ public class PW3TokenService {
     public String gerarToken(Usuario usuario) {
         try {
             var algoritmo = Algorithm.HMAC256(secret);
-            String token = JWT.create()
+            return JWT.create()
                     .withIssuer("DISCIPLINA PW3")
                     .withSubject(usuario.getLogin())
                     .withExpiresAt(dataExpiracao())
                     .sign(algoritmo);
-            return token;
         } catch (JWTCreationException exception){
             throw new RuntimeException("Erro ao gerar token jwt", exception);
         }
